@@ -83,6 +83,7 @@ public class PostControllerTest {
 
 		// WHEN
 		createPostAux("Ivan", "Vendo moto azul", "Muy barata");
+		this.wait.until(ExpectedConditions.textToBe(By.id("message"), "Post has been saved"));
 		driver.findElement(By.linkText("Back to board")).click();
 		driver.findElement(By.partialLinkText("Vendo moto azul")).click();
 		driver.findElement(By.id("delete-post")).click();
